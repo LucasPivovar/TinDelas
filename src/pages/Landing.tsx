@@ -336,7 +336,10 @@ const Landing = () => {
                   ease: [0.16, 1, 0.3, 1]
                 }}
               >
-                <div className="text-7xl font-black text-white mb-4">{item.step}</div>
+                <div className="relative inline-block mb-4">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-red/10 rounded-full blur-3xl pointer-events-none -z-10" />
+                  <div className="text-7xl font-black text-white">{item.step}</div>
+                </div>
                 <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
                 <p className="text-white/80 text-sm max-w-[250px] mx-auto">{item.desc}</p>
                 {i < 3 && (
