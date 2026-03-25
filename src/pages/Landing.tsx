@@ -61,7 +61,7 @@ const Landing = () => {
               className="text-center md:text-left"
             >
               <motion.h1 
-                className="text-4xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[1.1] mb-6 max-w-3xl mx-auto md:mx-0 overflow-visible"
+                className="text-4xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[1.2] mb-6 max-w-3xl mx-auto md:mx-0 overflow-visible"
                 variants={{
                   hidden: { opacity: 0 },
                   show: {
@@ -89,7 +89,7 @@ const Landing = () => {
                       </motion.span>
                     ))}
                   </div>
-                  <div className="flex flex-wrap gap-x-2 justify-center md:justify-start">
+                  <div className="flex flex-wrap gap-x-2 justify-center md:justify-start pb-1">
                     {["simples,", "rápida,"].map((word, i) => (
                       <motion.span
                         key={i}
@@ -97,7 +97,7 @@ const Landing = () => {
                           hidden: { opacity: 0, scale: 0.9 },
                           show: { opacity: 1, scale: 1 }
                         }}
-                        className="inline-block gradient-brand bg-clip-text text-transparent px-0.5"
+                        className="inline-block gradient-brand bg-clip-text text-transparent px-0.5 pb-1"
                       >
                         {word}
                       </motion.span>
@@ -107,7 +107,7 @@ const Landing = () => {
                         hidden: { opacity: 0, y: 10 },
                         show: { opacity: 1, y: 0 }
                       }}
-                      className="inline-block"
+                      className="inline-block pb-1"
                     >
                       e
                     </motion.span>
@@ -117,7 +117,7 @@ const Landing = () => {
                       hidden: { opacity: 0, scale: 0.9 },
                       show: { opacity: 1, scale: 1 }
                     }}
-                    className="inline-block gradient-brand bg-clip-text text-transparent w-fit mx-auto md:mx-0 px-0.5"
+                    className="inline-block gradient-brand bg-clip-text text-transparent w-fit mx-auto md:mx-0 px-0.5 pb-2"
                   >
                     segura.
                   </motion.span>
