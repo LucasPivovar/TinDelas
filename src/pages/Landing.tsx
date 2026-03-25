@@ -55,9 +55,9 @@ const Landing = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div 
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 100, damping: 20 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-center md:text-left"
             >
               <motion.h1 
@@ -100,9 +100,9 @@ const Landing = () => {
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, x: 50, scale: 0.9 }}
+              initial={{ opacity: 0, x: 100, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
               className="relative"
             >
               <div className="relative mx-auto w-[280px] md:w-[320px] aspect-[9/19] bg-slate-900 rounded-[3rem] border-[8px] border-slate-900 shadow-2xl overflow-hidden">
@@ -142,10 +142,10 @@ const Landing = () => {
         <div className="container mx-auto px-4">
             <motion.div 
               className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 1, type: "spring", stiffness: 60, damping: 20 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 mb-6 italic">
                 O que é o <span className="bg-gradient-brand bg-clip-text text-transparent">TinDelas</span>?
@@ -192,22 +192,20 @@ const Landing = () => {
             ].map((feature, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ 
                   opacity: 1, 
                   y: 0, 
                   transition: { 
                     duration: 0.8, 
-                    delay: i * 0.1, 
-                    type: "spring", 
-                    stiffness: 100, 
-                    damping: 20 
+                    delay: i * 0.08, 
+                    ease: [0.16, 1, 0.3, 1]
                   } 
                 }}
                 viewport={{ once: true, margin: "-50px" }}
                 whileHover={{ 
-                  y: -8, 
-                  boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.15)"
+                  y: -10, 
+                  boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)"
                 }}
                 transition={{ 
                   duration: 0.2, 
@@ -251,10 +249,8 @@ const Landing = () => {
                 viewport={{ once: true }}
                 transition={{ 
                   duration: 0.8, 
-                  delay: i * 0.15,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 18
+                  delay: i * 0.08,
+                  ease: [0.16, 1, 0.3, 1]
                 }}
               >
                 <div className="text-7xl font-black text-[#FFC8E0] mb-4">{item.step}</div>
@@ -285,23 +281,21 @@ const Landing = () => {
             ].map((testi, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
                 whileInView={{ 
                   opacity: 1, 
                   scale: 1, 
                   y: 0, 
                   transition: { 
                     duration: 0.8, 
-                    delay: i * 0.15, 
-                    type: "spring", 
-                    stiffness: 100, 
-                    damping: 20 
+                    delay: i * 0.1, 
+                    ease: [0.16, 1, 0.3, 1]
                   } 
                 }}
                 viewport={{ once: true, margin: "-50px" }}
                 whileHover={{ 
                   y: -5,
-                  boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.15), 0 4px 6px -4px rgb(0 0 0 / 0.15)"
+                  boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)"
                 }}
                 transition={{ 
                   duration: 0.2, 
@@ -386,7 +380,7 @@ const Landing = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 1, type: "spring", stiffness: 60, damping: 20 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-xl mx-auto"
           >
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Pronta para começar?</h2>
