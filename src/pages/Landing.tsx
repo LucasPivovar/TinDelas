@@ -52,6 +52,9 @@ const Landing = () => {
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-brand-black/5 rounded-full blur-3xl" />
         
+        {/* Mobile-only background element */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-brand-red/5 rounded-full blur-3xl md:hidden pointer-events-none" />
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div 
