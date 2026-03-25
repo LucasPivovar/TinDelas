@@ -43,7 +43,7 @@ const ChatConversation = () => {
           <img
             src={conversation.profile.photos[0]}
             alt={conversation.profile.name}
-            className="h-10 w-10 rounded-full object-cover border border-brand-pink/10 shadow-sm"
+            className="h-10 w-10 rounded-full object-cover border border-brand-red/10 shadow-sm"
           />
           <div>
             <h2 className="text-sm font-bold text-foreground leading-tight">
@@ -72,8 +72,8 @@ const ChatConversation = () => {
                 <div
                   className={`max-w-[80%] rounded-[22px] px-4 py-2.5 text-sm shadow-sm ${
                     isMe
-                      ? "bg-brand-lilac text-white rounded-br-none"
-                      : "bg-secondary text-foreground rounded-bl-none"
+                      ? "bg-brand-red text-white rounded-br-none"
+                      : "bg-slate-100 text-foreground rounded-bl-none"
                   }`}
                 >
                   {msg.text}
@@ -95,12 +95,12 @@ const ChatConversation = () => {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             placeholder="Digite sua mensagem..."
-            className="flex-1 rounded-full bg-brand-lilac/90 px-5 py-3 text-sm text-white placeholder:text-white/60 outline-none focus:ring-2 focus:ring-brand-lilac/20 transition-all shadow-inner"
+            className="flex-1 rounded-full bg-slate-100 px-5 py-3 text-slate-900 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-brand-red/10 transition-all shadow-inner border-2 border-slate-200"
           />
           <button
             onClick={handleSend}
             disabled={!input.trim()}
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-pink text-white shadow-lg shadow-brand-pink/20 transition-all active:scale-95 disabled:opacity-40"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-red text-white shadow-lg shadow-brand-red/20 transition-all active:scale-95 disabled:opacity-40"
           >
             <Send className="h-5 w-5" />
           </button>

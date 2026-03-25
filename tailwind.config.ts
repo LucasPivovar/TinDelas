@@ -102,8 +102,8 @@ export default {
         "float": "float 3s ease-in-out infinite",
       },
       backgroundImage: {
-        "gradient-brand": "linear-gradient(to right, hsl(330 100% 65%), hsl(270 50% 65%))",
-        "gradient-soft": "linear-gradient(to bottom, transparent, rgba(255, 75, 145, 0.05))",
+        "gradient-brand": "linear-gradient(to right, hsl(9.23deg 100% 50%), hsl(0deg 100% 29.28% / 94%))",
+        "gradient-soft": "linear-gradient(to bottom, transparent, rgba(255, 0, 0, 0.05))",
       },
     },
   },

@@ -35,36 +35,36 @@ const TwoFactor = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="mb-10 text-center">
-            <div className="bg-red-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-2xl">🔒</span>
-            </div>
-            <h1 className="text-3xl font-black text-brand-black tracking-tight">Verificação em Duas Etapas</h1>
-            <p className="text-slate-500 mt-2 font-medium">Enviamos um código de 6 dígitos para o seu e-mail.</p>
+          <div className="mb-8 text-center -mt-12">
+            <img src="/logo.png" alt="TinDelas" className="h-8 w-auto mx-auto mb-6" />
+            <h1 className="text-4xl font-black text-brand-black tracking-tight">Verificação em 2 etapas</h1>
+            <p className="text-xl text-slate-500 mt-2 font-medium px-4">Enviamos um código de 6 dígitos para o seu e-mail.</p>
           </div>
 
-          <form onSubmit={handleVerify} className="space-y-6">
-            <div className="space-y-2 text-center">
-              <Label htmlFor="code">Código de Acesso</Label>
-              <Input 
-                id="code" 
-                placeholder="000000" 
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                maxLength={6}
-                className="h-16 text-center text-3xl font-black tracking-widest border-slate-200 focus:border-brand-red focus:ring-brand-red rounded-xl"
-                required
-              />
-            </div>
+          <div className="p-8 border-2 border-slate-100 rounded-[32px] shadow-sm bg-white">
+            <form onSubmit={handleVerify} className="space-y-6">
+              <div className="space-y-2 text-center">
+                <Label htmlFor="code" className="text-slate-900">Código de Acesso</Label>
+                <Input 
+                  id="code" 
+                  placeholder="000000" 
+                  value={code}
+                  onChange={(e) => setCode(e.target.value)}
+                  maxLength={6}
+                  className="h-16 text-center text-3xl font-black tracking-widest rounded-xl"
+                  required
+                />
+              </div>
 
-            <Button type="submit" className="w-full h-14 bg-brand-red hover:bg-black text-white rounded-full font-bold text-lg shadow-lg shadow-brand-red/20 transition-all">
-              Verificar
-            </Button>
-            
-            <button type="button" className="w-full text-sm font-bold text-brand-red py-2">
-              Não recebi o código
-            </button>
-          </form>
+              <Button type="submit" className="w-full h-14 bg-brand-red hover:bg-black text-white rounded-full font-bold text-lg shadow-lg shadow-brand-red/20 transition-all">
+                Verificar
+              </Button>
+              
+              <button type="button" className="w-full text-sm font-bold text-brand-red py-2 hover:underline transition-all">
+                Não recebi o código
+              </button>
+            </form>
+          </div>
         </motion.div>
       </main>
     </div>

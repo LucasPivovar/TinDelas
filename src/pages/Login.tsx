@@ -36,45 +36,49 @@ const Login = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="mb-10 text-center">
-            <img src="/logo.png" alt="TinDelas" className="h-16 w-auto mx-auto mb-6" />
-            <h1 className="text-3xl font-black text-brand-black tracking-tight">Bem-vinda de volta</h1>
-            <p className="text-slate-500 mt-2 font-medium">Entre na sua conta para continuar</p>
+          <div className="mb-8 text-center -mt-12">
+            <img src="/logo.png" alt="TinDelas" className="h-8 w-auto mx-auto mb-6" />
+            <h1 className="text-4xl font-black text-brand-black tracking-tight">Bem-vinda de volta</h1>
+            <p className="text-xl text-slate-500 mt-2 font-medium px-4">Entre na sua conta para continuar</p>
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="email">E-mail</Label>
-              <Input 
-                id="email" 
-                type="email" 
-                placeholder="seu@email.com" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-12 border-slate-200 focus:border-brand-red focus:ring-brand-red rounded-xl"
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Senha</Label>
-                <button type="button" className="text-xs font-bold text-brand-red">Esqueceu a senha?</button>
+          <div className="p-8 border-2 border-slate-100 rounded-[32px] shadow-sm bg-white">
+            <form onSubmit={handleLogin} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="email">E-mail</Label>
+                <Input 
+                  id="email" 
+                  type="email" 
+                  placeholder="seu@email.com" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="h-12 rounded-xl"
+                  required
+                />
               </div>
-              <Input 
-                id="password" 
-                type="password" 
-                placeholder="••••••••" 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="h-12 border-slate-200 focus:border-brand-red focus:ring-brand-red rounded-xl"
-                required
-              />
-            </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password">Senha</Label>
+                  <Link to="/forgot-password" title="Recuperar senha" className="text-xs font-bold text-brand-red hover:underline transition-all">
+                    Esqueceu a senha?
+                  </Link>
+                </div>
+                <Input 
+                  id="password" 
+                  type="password" 
+                  placeholder="••••••••" 
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="h-12 rounded-xl"
+                  required
+                />
+              </div>
 
-            <Button type="submit" className="w-full h-14 bg-brand-red hover:bg-black text-white rounded-full font-bold text-lg shadow-lg shadow-brand-red/20 transition-all">
-              Entrar
-            </Button>
-          </form>
+              <Button type="submit" className="w-full h-14 bg-brand-red hover:bg-black text-white rounded-full font-bold text-lg shadow-lg shadow-brand-red/20 transition-all">
+                Entrar
+              </Button>
+            </form>
+          </div>
 
           <p className="mt-8 text-center text-sm text-slate-500 font-medium">
             Não tem uma conta?{" "}

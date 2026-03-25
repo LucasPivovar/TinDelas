@@ -49,8 +49,8 @@ const Landing = () => {
 
       {/* 1. Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-brand-pink/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-brand-purple/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-brand-black/5 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -61,37 +61,67 @@ const Landing = () => {
               className="text-center md:text-left"
             >
               <motion.h1 
-                className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900 leading-tight mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                className="text-4xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[1.1] mb-6 max-w-3xl mx-auto md:mx-0 overflow-visible"
+                variants={{
+                  hidden: { opacity: 0 },
+                  show: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.1
+                    }
+                  }
+                }}
+                initial="hidden"
+                animate="show"
               >
-                Conecte-se de forma{" "}
-                <motion.span 
-                  className="text-brand-red"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.8, duration: 0.4 }}
-                >
-                  simples
-                </motion.span>,{" "}
-                <motion.span 
-                  className="text-brand-red"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.0, duration: 0.4 }}
-                >
-                  rápida
-                </motion.span>{" "}
-                e{" "}
-                <motion.span 
-                  className="text-brand-red"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2, duration: 0.4 }}
-                >
-                  segura
-                </motion.span>.
+                <div className="flex flex-col gap-1 md:gap-2 overflow-visible">
+                  <div className="flex flex-wrap gap-x-2 justify-center md:justify-start">
+                    {"Conecte-se de forma".split(" ").map((word, i) => (
+                      <motion.span
+                        key={i}
+                        variants={{
+                          hidden: { opacity: 0, y: 10 },
+                          show: { opacity: 1, y: 0 }
+                        }}
+                        className="inline-block"
+                      >
+                        {word}
+                      </motion.span>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-x-2 justify-center md:justify-start">
+                    {["simples,", "rápida,"].map((word, i) => (
+                      <motion.span
+                        key={i}
+                        variants={{
+                          hidden: { opacity: 0, scale: 0.9 },
+                          show: { opacity: 1, scale: 1 }
+                        }}
+                        className="inline-block gradient-brand bg-clip-text text-transparent px-0.5"
+                      >
+                        {word}
+                      </motion.span>
+                    ))}
+                    <motion.span
+                      variants={{
+                        hidden: { opacity: 0, y: 10 },
+                        show: { opacity: 1, y: 0 }
+                      }}
+                      className="inline-block"
+                    >
+                      e
+                    </motion.span>
+                  </div>
+                  <motion.span
+                    variants={{
+                      hidden: { opacity: 0, scale: 0.9 },
+                      show: { opacity: 1, scale: 1 }
+                    }}
+                    className="inline-block gradient-brand bg-clip-text text-transparent w-fit mx-auto md:mx-0 px-0.5"
+                  >
+                    segura.
+                  </motion.span>
+                </div>
               </motion.h1>
               <motion.p 
                 className="text-lg md:text-xl text-slate-600 mb-8 max-w-lg"
@@ -252,7 +282,7 @@ const Landing = () => {
       {/* 4. Como Funciona */}
       <section id="como-funciona" className="py-20 bg-slate-900 text-white overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-brand-pink rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-64 h-64 bg-brand-red rounded-full blur-3xl" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -278,8 +308,8 @@ const Landing = () => {
                   ease: [0.16, 1, 0.3, 1]
                 }}
               >
-                <div className="text-7xl font-black text-[#FFC8E0] mb-4">{item.step}</div>
-                <h3 className="text-xl font-bold mb-3 text-brand-red">{item.title}</h3>
+                <div className="text-7xl font-black text-[#FF2C2C] mb-4 opacity-95">{item.step}</div>
+                <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
                 <p className="text-slate-400 text-sm max-w-[250px] mx-auto">{item.desc}</p>
                 {i < 3 && (
                   <div className="hidden lg:block absolute top-[60%] -right-6 -translate-y-1/2">
@@ -339,8 +369,35 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* 6. Plataformas */}
-      <section className="py-20 bg-gradient-brand text-white overflow-hidden relative">
+
+      {/* 6. FAQ */}
+      <section id="faq" className="py-20">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold">Perguntas Frequentes</h2>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {[
+              { q: "O aplicativo é gratuito?", a: "Sim, o download e o uso básico são gratuitos." },
+              { q: "O app está disponível para Android e iOS?", a: "Sim, você pode baixar nas duas plataformas." },
+              { q: "Como funciona o sistema de match?", a: "O match acontece quando duas usuárias demonstram interesse mútuo." },
+              { q: "Meus dados são seguros?", a: "Sim, o aplicativo possui sistemas avançados de proteção e privacidade." }
+            ].map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border-slate-100">
+                <AccordionTrigger className="text-left font-bold text-lg hover:text-brand-pink transition-colors">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* 7. Baixe Agora */}
+      <section className="py-24 bg-gradient-brand text-white overflow-hidden relative">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Baixe agora e comece a usar</h2>
@@ -372,69 +429,16 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* 7. FAQ */}
-      <section id="faq" className="py-20">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Perguntas Frequentes</h2>
-          </div>
-          <Accordion type="single" collapsible className="w-full">
-            {[
-              { q: "O aplicativo é gratuito?", a: "Sim, o download e o uso básico são gratuitos." },
-              { q: "O app está disponível para Android e iOS?", a: "Sim, você pode baixar nas duas plataformas." },
-              { q: "Como funciona o sistema de match?", a: "O match acontece quando duas usuárias demonstram interesse mútuo." },
-              { q: "Meus dados são seguros?", a: "Sim, o aplicativo possui sistemas avançados de proteção e privacidade." }
-            ].map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-slate-100">
-                <AccordionTrigger className="text-left font-bold text-lg hover:text-brand-pink transition-colors">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-slate-600 text-base leading-relaxed">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      {/* 8. Call to Action final */}
-      <section className="py-24 bg-brand-soft text-center">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Pronta para começar?</h2>
-            <p className="text-slate-600 mb-10 text-lg">
-              Baixe agora o aplicativo e descubra uma nova forma de se conectar.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Link to="/login">
-                <Button className="h-16 px-12 rounded-full bg-gradient-brand text-white text-xl font-bold shadow-lg shadow-brand-pink/20 transition-opacity hover:opacity-90 flex items-center gap-3">
-                  <Download className="h-6 w-6" />
-                  Baixar Agora
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* 9. Rodapé */}
       <footer className="py-20 bg-white border-t border-slate-100">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12 mb-16">
-            <div className="col-span-1 md:col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 items-center md:items-start text-center md:text-left">
+            <div className="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
               <div className="flex items-center mb-6">
-                <div className="w-24">
+                <div className="w-32 md:w-40 transition-all">
                   <img src="/logo.png" alt="TinDelas Logo" className="w-full h-auto object-contain" />
                 </div>
-              </div>
-              <p className="text-slate-500 max-w-sm mb-8 font-medium">
+              </div>      <p className="text-slate-500 max-w-sm mb-8 font-medium">
                 Uma plataforma inspirada no conceito do Tinder, porém exclusiva para mulheres. Um espaço digital voltado para conexão, segurança e pertencimento.
               </p>
               <div className="flex gap-4">
@@ -449,14 +453,13 @@ const Landing = () => {
                 </a>
               </div>
             </div>
-            <div>
-              <h4 className="font-bold mb-6">Apoio</h4>
-              <ul className="space-y-4">
-                <li><a href="#" className="text-slate-500 hover:text-brand-red transition-colors">Privacidade</a></li>
-                <li><a href="#" className="text-slate-500 hover:text-brand-red transition-colors">Termos de Uso</a></li>
-                <li><a href="#" className="text-slate-500 hover:text-brand-red transition-colors">Suporte</a></li>
-                <li><a href="#" className="text-slate-500 hover:text-brand-red transition-colors">Contato</a></li>
-              </ul>
+            <div className="flex flex-col items-center md:items-start">
+              <h4 className="font-bold mb-4 text-slate-900">Apoio</h4>
+              <div className="flex flex-col gap-3 items-center md:items-start">
+                <a href="#" className="text-slate-500 hover:text-brand-red transition-colors font-medium">Privacidade</a>
+                <a href="#" className="text-slate-500 hover:text-brand-red transition-colors font-medium">Termos de Uso</a>
+                <a href="#" className="text-slate-500 hover:text-brand-red transition-colors font-medium">Contato</a>
+              </div>
             </div>
           </div>
           <div className="pt-8 border-t border-slate-100 flex flex-col md:row items-center justify-between gap-4 text-slate-400 text-sm">

@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import TwoFactor from "./pages/TwoFactor";
 import Verification from "./pages/Verification";
+import ForgotPassword from "./pages/ForgotPassword";
 import TabBar from "./components/TabBar";
 import NotFound from "./pages/NotFound";
 
@@ -20,7 +21,7 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const location = useLocation();
-  const hideTabBar = ["/", "/login", "/register", "/2fa", "/verification"].includes(location.pathname);
+  const hideTabBar = ["/", "/login", "/register", "/2fa", "/verification", "/forgot-password"].includes(location.pathname);
 
   return (
     <>
@@ -30,6 +31,7 @@ const AppContent = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/2fa" element={<TwoFactor />} />
         <Route path="/verification" element={<Verification />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/app" element={<Feed />} />
         <Route path="/surprise" element={<SurpriseMatch />} />
         <Route path="/chat" element={<Chat />} />

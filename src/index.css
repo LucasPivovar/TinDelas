@@ -12,21 +12,21 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 330 100% 65%;
+    --primary: 0 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 270 50% 65%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 330 100% 96%;
-    --accent-foreground: 330 100% 45%;
+    --accent: 0 100% 98%;
+    --accent-foreground: 0 100% 50%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 80%;
     --input: 240 5.9% 80%;
-    --ring: 330 100% 65%;
+    --ring: 0 100% 50%;
     --radius: 1rem;
-    --heart: 330 100% 65%;
+    --heart: 0 100% 50%;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -86,7 +86,7 @@
 
 @layer utilities {
   .gradient-brand {
-    @apply bg-gradient-to-r from-brand-pink to-brand-purple;
+    background-image: linear-gradient(to right, hsl(9.23deg 100% 50%), hsl(0deg 100% 29.28% / 94%));
   }
   
   .gradient-soft {
@@ -94,21 +94,45 @@
   }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+/* Custom Scrollbar - Mobile Only */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #FF0000;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #CC0000;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: #f8f7ff;
+/* Hide scrollbar for desktop, but allow scrolling */
+@media (min-width: 769px) {
+  html, body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  ::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #FF4B91, #9B5DE5);
-  border-radius: 5px;
-  border: 2px solid #f8f7ff;
+/* Global Input Styles */
+input, textarea {
+  border: 2px solid #e2e8f0 !important; /* slate-200 */
+  transition: border-color 0.2s ease-in-out;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #FF4B91;
+input:focus, textarea:focus {
+  border-color: #FF0000 !important; /* brand-red */
+  outline: none;
 }

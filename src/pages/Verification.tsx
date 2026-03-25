@@ -41,10 +41,13 @@ const Verification = () => {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h1 className="text-3xl font-black text-brand-black tracking-tight mb-2">Dados Pessoais</h1>
-              <p className="text-slate-500 mb-8 font-medium">Precisamos validar sua identidade para garantir a segurança de todas.</p>
+              <div className="mb-8 text-center -mt-12">
+                <img src="/logo.png" alt="TinDelas" className="h-8 w-auto mx-auto mb-6" />
+                <h1 className="text-4xl font-black text-brand-black tracking-tight">Dados Pessoais</h1>
+                <p className="text-xl text-slate-500 mt-2 font-medium px-4">Precisamos validar sua identidade para garantir a segurança.</p>
+              </div>
 
-              <div className="space-y-6">
+              <div className="p-8 border-2 border-slate-100 rounded-[32px] shadow-sm bg-white space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="cpf">CPF</Label>
                   <Input 
@@ -52,7 +55,7 @@ const Verification = () => {
                     placeholder="000.000.000-00" 
                     value={cpf}
                     onChange={(e) => setCpf(e.target.value)}
-                    className="h-12 border-slate-200 focus:border-brand-red focus:ring-brand-red rounded-xl"
+                    className="h-12 rounded-xl"
                     required
                   />
                 </div>
@@ -63,7 +66,7 @@ const Verification = () => {
                     type="date" 
                     value={dob}
                     onChange={(e) => setDob(e.target.value)}
-                    className="h-12 border-slate-200 focus:border-brand-red focus:ring-brand-red rounded-xl"
+                    className="h-12 rounded-xl"
                     required
                   />
                 </div>
@@ -81,24 +84,28 @@ const Verification = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="text-center"
             >
-              <h1 className="text-3xl font-black text-brand-black tracking-tight mb-2">Verificação Facial</h1>
-              <p className="text-slate-500 mb-8 font-medium">Tire uma selfie segurando um documento de identidade.</p>
-
-              <div className="aspect-square bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center mb-8 relative overflow-hidden group hover:border-brand-red transition-colors cursor-pointer">
-                <Camera className="h-12 w-12 text-slate-300 group-hover:text-brand-red mb-4 transition-colors" />
-                <span className="text-sm font-bold text-slate-400 group-hover:text-brand-red transition-colors">Abrir Câmera</span>
+              <div className="mb-8 text-center -mt-12">
+                <img src="/logo.png" alt="TinDelas" className="h-8 w-auto mx-auto mb-6" />
+                <h1 className="text-4xl font-black text-brand-black tracking-tight">Verificação Facial</h1>
+                <p className="text-xl text-slate-500 mt-2 font-medium px-4">Tire uma selfie segurando seu documento.</p>
               </div>
 
-              <div className="flex flex-col gap-4">
-                <Button onClick={handleNext} className="w-full h-14 bg-brand-red hover:bg-black text-white rounded-full font-bold text-lg shadow-lg shadow-brand-red/20 transition-all">
-                  Capturar Selfie
-                </Button>
-                <Button variant="ghost" className="text-slate-500 flex items-center justify-center gap-2">
-                  <Upload className="h-4 w-4" />
-                  Fazer upload do arquivo
-                </Button>
+              <div className="p-8 border-2 border-slate-100 rounded-[32px] shadow-sm bg-white">
+                <div className="aspect-square bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center mb-8 relative overflow-hidden group hover:border-brand-red transition-colors cursor-pointer">
+                  <Camera className="h-12 w-12 text-slate-300 group-hover:text-brand-red mb-4 transition-colors" />
+                  <span className="text-sm font-bold text-slate-400 group-hover:text-brand-red transition-colors">Abrir Câmera</span>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <Button onClick={handleNext} className="w-full h-14 bg-brand-red hover:bg-black text-white rounded-full font-bold text-lg shadow-lg shadow-brand-red/20 transition-all">
+                    Capturar Selfie
+                  </Button>
+                  <Button variant="ghost" className="text-slate-500 flex items-center justify-center gap-2">
+                    <Upload className="h-4 w-4" />
+                    Fazer upload do arquivo
+                  </Button>
+                </div>
               </div>
             </motion.div>
           )}
@@ -111,15 +118,17 @@ const Verification = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-center"
             >
-              <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
-                <CheckCircle2 className="h-10 w-10" />
-              </div>
-              <h1 className="text-3xl font-black text-brand-black tracking-tight mb-2">Tudo pronto!</h1>
-              <p className="text-slate-500 mb-10 font-medium">Seus documentos foram enviados para análise. Você já pode explorar o app enquanto validamos.</p>
+              <div className="p-8 border-2 border-slate-100 rounded-[32px] shadow-sm bg-white">
+                <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
+                  <CheckCircle2 className="h-10 w-10" />
+                </div>
+                <h1 className="text-3xl font-black text-brand-black tracking-tight mb-2">Tudo pronto!</h1>
+                <p className="text-slate-500 mb-10 font-medium">Seus documentos foram enviados para análise. Você já pode explorar o app enquanto validamos.</p>
 
-              <Button onClick={() => navigate("/app")} className="w-full h-14 bg-brand-red hover:bg-black text-white rounded-full font-bold text-lg shadow-lg shadow-brand-red/20 transition-all">
-                Ir para o App
-              </Button>
+                <Button onClick={() => navigate("/app")} className="w-full h-14 bg-brand-red hover:bg-black text-white rounded-full font-bold text-lg shadow-lg shadow-brand-red/20 transition-all">
+                  Ir para o App
+                </Button>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
