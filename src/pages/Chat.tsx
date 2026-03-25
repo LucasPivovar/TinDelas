@@ -16,7 +16,7 @@ const Chat = () => {
           <button
             key={conv.id}
             onClick={() => navigate(`/chat/${conv.id}`)}
-            className="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-brand-soft active:bg-brand-soft"
+            className="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-slate-50 active:bg-slate-50"
           >
             <img
               src={conv.profile.photos[0]}

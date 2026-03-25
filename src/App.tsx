@@ -9,6 +9,10 @@ import Chat from "./pages/Chat";
 import ChatConversation from "./pages/ChatConversation";
 import Profile from "./pages/Profile";
 import Landing from "./pages/Landing";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import TwoFactor from "./pages/TwoFactor";
+import Verification from "./pages/Verification";
 import TabBar from "./components/TabBar";
 import NotFound from "./pages/NotFound";
 
@@ -16,12 +20,16 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const location = useLocation();
-  const isLanding = location.pathname === "/";
+  const hideTabBar = ["/", "/login", "/register", "/2fa", "/verification"].includes(location.pathname);
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/2fa" element={<TwoFactor />} />
+        <Route path="/verification" element={<Verification />} />
         <Route path="/app" element={<Feed />} />
         <Route path="/surprise" element={<SurpriseMatch />} />
         <Route path="/chat" element={<Chat />} />
@@ -29,7 +37,7 @@ const AppContent = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {!isLanding && <TabBar />}
+      {!hideTabBar && <TabBar />}
     </>
   );
 };

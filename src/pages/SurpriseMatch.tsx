@@ -46,7 +46,7 @@ const SurpriseMatch = () => {
                 key={profile.id}
                 onClick={() => handleRevealAndLike(profile)}
                 disabled={liked}
-                className="relative overflow-hidden rounded-2xl border border-brand-pink/30 bg-white p-4 text-left transition-colors hover:bg-brand-soft disabled:opacity-70 shadow-sm"
+                className="relative overflow-hidden rounded-2xl border border-brand-red/30 bg-white p-4 text-left transition-colors hover:bg-slate-50 disabled:opacity-70 shadow-sm"
                 whileTap={!liked ? { scale: 0.96 } : undefined}
                 layout
               >
@@ -54,11 +54,11 @@ const SurpriseMatch = () => {
                 <AnimatePresence>
                   {!revealed && (
                     <motion.div
-                      className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft"
+                      className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50"
                       exit={{ scale: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Gift className="h-6 w-6 text-brand-pink" strokeWidth={1.5} />
+                      <Gift className="h-6 w-6 text-brand-red" strokeWidth={1.5} />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -92,7 +92,7 @@ const SurpriseMatch = () => {
                   {profile.interests.slice(0, 3).map((interest) => (
                     <span
                       key={interest}
-                      className="rounded-full bg-brand-soft px-2.5 py-1 text-[10px] font-medium text-brand-pink border border-brand-pink/5"
+                      className="rounded-full bg-slate-50 px-2.5 py-1 text-[10px] font-medium text-brand-red border border-brand-red/5"
                     >
                       {interest}
                     </span>

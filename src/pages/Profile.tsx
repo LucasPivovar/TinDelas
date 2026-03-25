@@ -15,7 +15,7 @@ const Profile = () => {
 
       {/* Photo + Name */}
       <div className="flex flex-col items-center px-4 pt-2 pb-6">
-        <div className="h-28 w-28 overflow-hidden rounded-full border-2 border-brand-pink/20 p-1">
+        <div className="h-28 w-28 overflow-hidden rounded-full border-2 border-brand-red/20 p-1">
           <img
             src={myProfile.photos[0]}
             alt={myProfile.name}
@@ -51,7 +51,7 @@ const Profile = () => {
             {myProfile.interests.map((interest) => (
               <span
                 key={interest}
-                className="rounded-full bg-brand-soft px-3 py-1.5 text-xs font-medium text-brand-pink border border-brand-pink/30"
+                className="rounded-full bg-slate-50 px-3 py-1.5 text-xs font-medium text-brand-red border border-brand-red/30"
               >
                 {interest}
               </span>

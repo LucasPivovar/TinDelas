@@ -29,7 +29,7 @@ const Landing = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center">
-            <div className="w-24 md:w-32">
+            <div className="w-32 md:w-40">
               <img src="/logo.png" alt="TinDelas Logo" className="w-full h-auto object-contain" />
             </div>
           </div>
@@ -39,8 +39,8 @@ const Landing = () => {
             <a href="#como-funciona" className="text-sm font-medium hover:text-brand-pink transition-colors">Como Funciona</a>
             <a href="#faq" className="text-sm font-medium hover:text-brand-pink transition-colors">FAQ</a>
           </div>
-          <Link to="/app">
-            <Button className="rounded-full bg-gradient-brand hover:opacity-90 transition-opacity">
+          <Link to="/login">
+            <Button className="rounded-full bg-brand-red hover:bg-black text-white transition-colors">
               Entrar no App
             </Button>
           </Link>
@@ -66,7 +66,32 @@ const Landing = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                Conecte-se de forma <span className="bg-gradient-brand bg-clip-text text-transparent">simples</span>, rápida e segura.
+                Conecte-se de forma{" "}
+                <motion.span 
+                  className="text-brand-red"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.8, duration: 0.4 }}
+                >
+                  simples
+                </motion.span>,{" "}
+                <motion.span 
+                  className="text-brand-red"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.0, duration: 0.4 }}
+                >
+                  rápida
+                </motion.span>{" "}
+                e{" "}
+                <motion.span 
+                  className="text-brand-red"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.2, duration: 0.4 }}
+                >
+                  segura
+                </motion.span>.
               </motion.h1>
               <motion.p 
                 className="text-lg md:text-xl text-slate-600 mb-8 max-w-lg"
@@ -103,7 +128,7 @@ const Landing = () => {
               initial={{ opacity: 0, x: 100, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="relative"
+              className="relative hidden md:block"
             >
               <div className="relative mx-auto w-[280px] md:w-[320px] aspect-[9/19] bg-slate-900 rounded-[3rem] border-[8px] border-slate-900 shadow-2xl overflow-hidden">
                 <img 
@@ -147,8 +172,8 @@ const Landing = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 mb-6 italic">
-                O que é o <span className="bg-gradient-brand bg-clip-text text-transparent">TinDelas</span>?
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 mb-6">
+                O que é o <span className="text-brand-red">TinDelas</span>?
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
                 O TinDelas foi criado para facilitar conexões reais através de uma experiência digital simples e intuitiva. A plataforma reúne mulheres com interesses em comum e oferece ferramentas para tornar cada interação mais segura e significativa.
@@ -187,7 +212,7 @@ const Landing = () => {
                 title: "Conexões Reais",
                 desc: "Conheça mulheres próximas e com interesses semelhantes.",
                 icon: Heart,
-                color: "bg-brand-pink/20 text-brand-pink"
+                color: "bg-red-50 text-brand-red"
               }
             ].map((feature, i) => (
               <motion.div 
@@ -254,7 +279,7 @@ const Landing = () => {
                 }}
               >
                 <div className="text-7xl font-black text-[#FFC8E0] mb-4">{item.step}</div>
-                <h3 className="text-xl font-bold mb-3 text-brand-pink">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-brand-red">{item.title}</h3>
                 <p className="text-slate-400 text-sm max-w-[250px] mx-auto">{item.desc}</p>
                 {i < 3 && (
                   <div className="hidden lg:block absolute top-[60%] -right-6 -translate-y-1/2">
@@ -301,12 +326,12 @@ const Landing = () => {
                   duration: 0.2, 
                   ease: "easeOut" 
                 }}
-                className="w-full md:w-[350px] p-8 rounded-2xl bg-brand-soft border border-brand-pink/30 cursor-default"
+                className="w-full md:w-[350px] p-8 rounded-2xl bg-white border border-slate-100 cursor-default"
               >
                 <div className="flex text-amber-400 mb-4">
                   {[...Array(5)].map((_, j) => <Star key={j} className="h-4 w-4 fill-current" />)}
                 </div>
-                <p className="text-slate-700 italic mb-6">“{testi.feedback}”</p>
+                <p className="text-slate-700 mb-6">“{testi.feedback}”</p>
                 <div className="font-bold text-slate-900">— {testi.name}</div>
               </motion.div>
             ))}
@@ -318,7 +343,7 @@ const Landing = () => {
       <section className="py-20 bg-gradient-brand text-white overflow-hidden relative">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 italic">Baixe agora e comece a usar</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Baixe agora e comece a usar</h2>
             <p className="text-xl opacity-90 mb-12">
               A sua próxima conexão pode estar a um deslize de distância. Disponível para iOS e Android.
             </p>
@@ -351,7 +376,7 @@ const Landing = () => {
       <section id="faq" className="py-20">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold italic">Perguntas Frequentes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Perguntas Frequentes</h2>
           </div>
           <Accordion type="single" collapsible className="w-full">
             {[
@@ -388,7 +413,7 @@ const Landing = () => {
               Baixe agora o aplicativo e descubra uma nova forma de se conectar.
             </p>
             <div className="flex justify-center gap-4">
-              <Link to="/app">
+              <Link to="/login">
                 <Button className="h-16 px-12 rounded-full bg-gradient-brand text-white text-xl font-bold shadow-lg shadow-brand-pink/20 transition-opacity hover:opacity-90 flex items-center gap-3">
                   <Download className="h-6 w-6" />
                   Baixar Agora
@@ -425,21 +450,12 @@ const Landing = () => {
               </div>
             </div>
             <div>
-              <h4 className="font-bold mb-6">Links Rápidos</h4>
-              <ul className="space-y-4">
-                <li><a href="#sobre" className="text-slate-500 hover:text-brand-pink transition-colors">Sobre Nós</a></li>
-                <li><a href="#funcionalidades" className="text-slate-500 hover:text-brand-pink transition-colors">Funcionalidades</a></li>
-                <li><Link to="/app" className="text-slate-500 hover:text-brand-pink transition-colors">Entrar no App</Link></li>
-                <li><a href="#" className="text-slate-500 hover:text-brand-pink transition-colors">Blog</a></li>
-              </ul>
-            </div>
-            <div>
               <h4 className="font-bold mb-6">Apoio</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-slate-500 hover:text-brand-pink transition-colors">Privacidade</a></li>
-                <li><a href="#" className="text-slate-500 hover:text-brand-pink transition-colors">Termos de Uso</a></li>
-                <li><a href="#" className="text-slate-500 hover:text-brand-pink transition-colors">Suporte</a></li>
-                <li><a href="#" className="text-slate-500 hover:text-brand-pink transition-colors">Contato</a></li>
+                <li><a href="#" className="text-slate-500 hover:text-brand-red transition-colors">Privacidade</a></li>
+                <li><a href="#" className="text-slate-500 hover:text-brand-red transition-colors">Termos de Uso</a></li>
+                <li><a href="#" className="text-slate-500 hover:text-brand-red transition-colors">Suporte</a></li>
+                <li><a href="#" className="text-slate-500 hover:text-brand-red transition-colors">Contato</a></li>
               </ul>
             </div>
           </div>

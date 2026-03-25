@@ -34,10 +34,12 @@ export default {
           foreground: "hsl(var(--secondary-foreground))",
         },
         brand: {
-          pink: "hsl(330 100% 65%)",
-          purple: "hsl(270 50% 65%)",
-          lilac: "hsl(265 80% 70%)",
-          soft: "hsl(330 100% 96%)",
+          red: "#FF0000",
+          black: "#000000",
+          white: "#FFFFFF",
+          soft: "#F8F8F8",
+          pink: "#FF0000", // Aliasing pink to red to keep compatibility for now
+          purple: "#000000", // Aliasing purple to black
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

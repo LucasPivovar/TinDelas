@@ -131,7 +131,7 @@ const SwipeCard = ({ profile, onSwipe }: SwipeCardProps) => {
         </button>
         <button
           onClick={() => onSwipe("right")}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-brand shadow-lg shadow-brand-pink/30 transition-transform active:scale-90"
+          className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-red shadow-lg shadow-brand-red/30 transition-transform active:scale-90 hover:bg-black transition-colors"
         >
           <Heart className="h-7 w-7 text-white fill-current" />
         </button>
@@ -141,7 +141,7 @@ const SwipeCard = ({ profile, onSwipe }: SwipeCardProps) => {
       <Sheet open={showDetails} onOpenChange={setShowDetails}>
         <SheetContent side="bottom" className="rounded-t-[32px] border-t border-border px-6 pb-10 pt-6">
           <SheetHeader>
-            <SheetTitle className="text-2xl font-bold italic bg-gradient-brand bg-clip-text text-transparent">
+            <SheetTitle className="text-2xl font-bold text-brand-red">
               {profile.name}, {profile.age}
             </SheetTitle>
             <SheetDescription>{profile.occupation} · {profile.distance} km</SheetDescription>
@@ -152,7 +152,7 @@ const SwipeCard = ({ profile, onSwipe }: SwipeCardProps) => {
               {profile.interests.map((interest) => (
                 <span
                   key={interest}
-                  className="rounded-full bg-brand-soft px-3 py-1.5 text-xs font-medium text-brand-pink border border-brand-pink/30"
+                  className="rounded-full bg-brand-soft px-3 py-1.5 text-xs font-medium text-brand-red border border-brand-red/30"
                 >
                   {interest}
                 </span>
