@@ -48,7 +48,7 @@ const Landing = () => {
       </nav>
 
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-20 pb-12 md:pt-48 md:pb-32 overflow-hidden">
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-brand-black/5 rounded-full blur-3xl" />
         
@@ -221,7 +221,7 @@ const Landing = () => {
       </section>
 
       {/* 2. Sobre o App */}
-      <section id="sobre" className="py-20 bg-slate-50">
+      <section id="sobre" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
             <motion.div 
               className="text-center mb-16"
@@ -241,7 +241,7 @@ const Landing = () => {
       </section>
 
       {/* 3. Funcionalidades */}
-      <section id="funcionalidades" className="py-20">
+      <section id="funcionalidades" className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Por que escolher o TinDelas?</h2>
@@ -308,7 +308,7 @@ const Landing = () => {
       </section>
 
       {/* 4. Como Funciona */}
-      <section id="como-funciona" className="py-20 bg-[#262626] text-white overflow-hidden relative">
+      <section id="como-funciona" className="py-12 md:py-20 bg-[#262626] text-white overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full blur-3xl opacity-20" />
         </div>
@@ -354,7 +354,7 @@ const Landing = () => {
       </section>
 
       {/* 5. Depoimentos */}
-      <section className="py-20 overflow-hidden">
+      <section className="py-12 md:py-20 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Feedback de quem usa</h2>
@@ -402,7 +402,7 @@ const Landing = () => {
 
 
       {/* 6. FAQ */}
-      <section id="faq" className="py-20">
+      <section id="faq" className="py-12 md:py-20">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Perguntas Frequentes</h2>
@@ -428,7 +428,7 @@ const Landing = () => {
       </section>
 
       {/* 7. Baixe Agora */}
-      <section className="py-24 bg-[#262626] text-white overflow-hidden relative">
+      <section className="py-14 md:py-24 bg-[#262626] text-white overflow-hidden relative">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Baixe agora e comece a usar</h2>
@@ -461,7 +461,7 @@ const Landing = () => {
       </section>
 
       {/* 9. Rodapé */}
-      <footer className="py-20 bg-white border-t border-slate-100">
+      <footer className="py-12 md:py-20 bg-white border-t border-slate-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 items-center md:items-start text-center md:text-left">
             <div className="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
