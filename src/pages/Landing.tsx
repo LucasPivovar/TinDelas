@@ -48,7 +48,7 @@ const Landing = () => {
       </nav>
 
       {/* 1. Hero Section */}
-      <section className="relative pt-20 pb-12 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-16 pb-12 md:pt-0 md:pb-0 overflow-hidden">
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-brand-black/5 rounded-full blur-3xl" />
         
