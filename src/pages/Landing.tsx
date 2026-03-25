@@ -29,7 +29,7 @@ const Landing = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="TinDelas Logo" className="h-20 w-20 md:h-24 md:w-24 rounded-2xl object-cover shadow-sm" />
+            <img src="/logo.png" alt="TinDelas Logo" className="h-20 w-20 md:h-24 md:w-24 rounded-2xl object-cover" />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#sobre" className="text-sm font-medium hover:text-brand-pink transition-colors">Sobre</a>
@@ -409,7 +409,7 @@ const Landing = () => {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <img src="/logo.png" alt="TinDelas Logo" className="h-20 w-20 rounded-lg object-cover shadow-sm" />
+                <img src="/logo.png" alt="TinDelas Logo" className="h-20 w-20 rounded-lg object-cover" />
               </div>
               <p className="text-slate-500 max-w-sm mb-8 font-medium">
                 Uma plataforma inspirada no conceito do Tinder, porém exclusiva para mulheres. Um espaço digital voltado para conexão, segurança e pertencimento.
