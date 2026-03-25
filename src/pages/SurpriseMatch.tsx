@@ -27,7 +27,13 @@ const SurpriseMatch = () => {
   };
 
   return (
-    <div className="mx-auto flex h-[calc(100dvh-60px)] max-w-lg flex-col overflow-y-auto pb-20 pt-2">
+    <div 
+      className="mx-auto flex h-[calc(100dvh-60px)] max-w-lg flex-col overflow-y-auto pb-20 pt-2 relative"
+      style={{
+        maskImage: 'linear-gradient(to bottom, transparent, black 40px, black calc(100% - 40px), transparent)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 40px, black calc(100% - 40px), transparent)'
+      }}
+    >
       <AppHeader title="match surpresa" />
 
       <p className="px-6 pb-4 pt-4 text-center text-sm text-muted-foreground">
@@ -35,8 +41,28 @@ const SurpriseMatch = () => {
       </p>
 
       {/* Grid of surprise boxes */}
-      <div className="px-4 pb-20">
         <div className="grid grid-cols-2 gap-3">
+          {/* Special Surprise Cards */}
+          <motion.div
+            className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 p-4 text-left shadow-sm flex flex-col items-center justify-center gap-3 min-h-[160px]"
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="bg-white/10 p-3 rounded-full">
+              <Gift className="h-6 w-6 text-white" strokeWidth={1.5} />
+            </div>
+            <p className="text-white text-xs font-bold text-center leading-tight">Receba uma<br/>surpresa</p>
+          </motion.div>
+
+          <motion.div
+            className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-sm flex flex-col items-center justify-center gap-3 min-h-[160px]"
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="bg-slate-100 p-3 rounded-full">
+              <Sparkles className="h-6 w-6 text-slate-900" strokeWidth={1.5} />
+            </div>
+            <p className="text-slate-900 text-xs font-bold text-center leading-tight">Ganhe um<br/>presente</p>
+          </motion.div>
+
           {profiles.map((profile) => {
             const revealed = revealedIds.has(profile.id);
             const liked = likedIds.has(profile.id);
@@ -46,7 +72,7 @@ const SurpriseMatch = () => {
                 key={profile.id}
                 onClick={() => handleRevealAndLike(profile)}
                 disabled={liked}
-                className="relative overflow-hidden rounded-2xl border border-brand-red/30 bg-white p-4 text-left transition-colors hover:bg-slate-50 disabled:opacity-70 shadow-sm"
+                className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 text-left transition-colors hover:bg-slate-50 disabled:opacity-70 shadow-sm"
                 whileTap={!liked ? { scale: 0.96 } : undefined}
                 layout
               >
@@ -54,11 +80,11 @@ const SurpriseMatch = () => {
                 <AnimatePresence>
                   {!revealed && (
                     <motion.div
-                      className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50"
+                      className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100"
                       exit={{ scale: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Gift className="h-6 w-6 text-brand-red" strokeWidth={1.5} />
+                      <Gift className="h-6 w-6 text-slate-900" strokeWidth={1.5} />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -67,12 +93,12 @@ const SurpriseMatch = () => {
                 <AnimatePresence>
                   {liked && (
                     <motion.div
-                      className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary"
+                      className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-950"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     >
-                      <Heart className="h-6 w-6 text-primary-foreground" fill="currentColor" strokeWidth={1.5} />
+                      <Heart className="h-6 w-6 text-white" fill="currentColor" strokeWidth={1.5} />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -92,7 +118,7 @@ const SurpriseMatch = () => {
                   {profile.interests.slice(0, 3).map((interest) => (
                     <span
                       key={interest}
-                      className="rounded-full bg-slate-50 px-2.5 py-1 text-[10px] font-medium text-brand-red border border-brand-red/5"
+                      className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-medium text-slate-600 border border-slate-200/50"
                     >
                       {interest}
                     </span>
@@ -102,7 +128,7 @@ const SurpriseMatch = () => {
                 {/* Liked label */}
                 {liked && (
                   <motion.p
-                    className="mt-2 text-xs font-medium text-primary"
+                    className="mt-2 text-xs font-bold text-slate-950"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
@@ -113,7 +139,6 @@ const SurpriseMatch = () => {
             );
           })}
         </div>
-      </div>
 
       <MatchOverlay
         show={showMatch}

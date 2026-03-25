@@ -129,13 +129,12 @@ const Landing = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Descubra uma nova forma de conhecer pessoas através de uma experiência moderna e intuitiva exclusiva para mulheres.
               </motion.p>
               <div className="flex flex-row gap-4 justify-center md:justify-start">
                 <Button className="h-14 px-4 sm:h-16 sm:px-10 rounded-full bg-slate-900 hover:bg-slate-800 text-white flex items-center gap-2 sm:gap-4 transition-all active:scale-95 shadow-2xl shadow-slate-900/20 shrink-0">
                   <img src="/apple.svg" alt="Apple Store" className="h-6 w-6 sm:h-7 sm:w-7 invert brightness-0" style={{ filter: 'brightness(0) invert(1)' }} />
                   <div className="text-left">
-                    <div className="text-[10px] sm:text-[12px] uppercase font-bold tracking-tight opacity-70">Download on the</div>
+                    <div className="text-[10px] sm:text-[12px] uppercase font-bold tracking-tight opacity-70">Baixe na</div>
                     <div className="text-sm sm:text-lg font-bold leading-tight">App Store</div>
                   </div>
                 </Button>
@@ -147,7 +146,7 @@ const Landing = () => {
                     <path fill="#4285F4" d="M1.39 41.86c-1.39,4.18 -1.39,9.77 -1.39,15.34l0 397.64c0,5.57 0,9.76 1.4,15.34l216.27 -214.86 -216.28 -213.46z"/>
                   </svg>
                   <div className="text-left">
-                    <div className="text-[10px] sm:text-[12px] uppercase font-bold tracking-tight opacity-70">Get it on</div>
+                    <div className="text-[10px] sm:text-[12px] uppercase font-bold tracking-tight opacity-70">Disponível no</div>
                     <div className="text-sm sm:text-lg font-bold leading-tight">Google Play</div>
                   </div>
                 </Button>
@@ -187,6 +186,35 @@ const Landing = () => {
                   </div>
                 </div>
               </div>
+
+              {/* New Floating Balloons */}
+              <motion.div 
+                className="absolute top-1/4 -left-8 bg-white p-4 rounded-2xl shadow-xl border border-slate-50 flex flex-col gap-1 z-20 min-w-[200px]"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="flex items-center gap-2">
+                  <div className="bg-brand-red/10 p-1.5 rounded-full">
+                    <Star className="h-4 w-4 text-brand-red fill-current" />
+                  </div>
+                  <span className="text-sm font-bold whitespace-nowrap">Receba uma surpresa</span>
+                </div>
+                <p className="text-[10px] text-slate-500 font-medium ml-8">Ganhe brindes exclusivos da comunidade</p>
+              </motion.div>
+
+              <motion.div 
+                className="absolute bottom-1/4 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-50 flex flex-col gap-1 z-20 min-w-[200px]"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              >
+                <div className="flex items-center gap-2">
+                  <div className="bg-brand-red/10 p-1.5 rounded-full">
+                    <Heart className="h-4 w-4 text-brand-red fill-current" />
+                  </div>
+                  <span className="text-sm font-bold whitespace-nowrap">Descubra um segredo</span>
+                </div>
+                <p className="text-[10px] text-slate-500 font-medium ml-8">Conheça algo novo todos os dias</p>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -280,9 +308,9 @@ const Landing = () => {
       </section>
 
       {/* 4. Como Funciona */}
-      <section id="como-funciona" className="py-20 bg-slate-900 text-white overflow-hidden relative">
+      <section id="como-funciona" className="py-20 bg-[#262626] text-white overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-brand-red rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full blur-3xl opacity-20" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -308,12 +336,12 @@ const Landing = () => {
                   ease: [0.16, 1, 0.3, 1]
                 }}
               >
-                <div className="text-7xl font-black text-[#FF2C2C] mb-4 opacity-95">{item.step}</div>
+                <div className="text-7xl font-black text-white mb-4">{item.step}</div>
                 <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
-                <p className="text-slate-400 text-sm max-w-[250px] mx-auto">{item.desc}</p>
+                <p className="text-white/80 text-sm max-w-[250px] mx-auto">{item.desc}</p>
                 {i < 3 && (
-                  <div className="hidden lg:block absolute top-[60%] -right-6 -translate-y-1/2">
-                    <ChevronRight className="h-6 w-6 text-white/20" />
+                  <div className="hidden lg:block absolute top-[40%] -right-6 -translate-y-1/2">
+                    <ChevronRight className="h-6 w-6 text-white/30" />
                   </div>
                 )}
               </motion.div>
@@ -397,18 +425,18 @@ const Landing = () => {
       </section>
 
       {/* 7. Baixe Agora */}
-      <section className="py-24 bg-gradient-brand text-white overflow-hidden relative">
+      <section className="py-24 bg-[#262626] text-white overflow-hidden relative">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Baixe agora e comece a usar</h2>
-            <p className="text-xl opacity-90 mb-12">
+            <p className="text-xl opacity-90 mb-12 text-white/90">
               A sua próxima conexão pode estar a um deslize de distância. Disponível para iOS e Android.
             </p>
             <div className="flex flex-row gap-4 justify-center items-center">
               <Button className="h-14 px-4 sm:h-16 sm:px-10 rounded-full bg-white text-slate-900 hover:bg-slate-100 flex items-center gap-2 sm:gap-4 transition-colors shrink-0">
                 <img src="/apple.svg" alt="Apple Store" className="h-6 w-6 sm:h-8 sm:w-8" />
                 <div className="text-left">
-                  <div className="text-[8px] sm:text-[10px] uppercase font-bold tracking-tight opacity-70">Download on the</div>
+                  <div className="text-[8px] sm:text-[10px] uppercase font-bold tracking-tight opacity-70">Baixe na</div>
                   <div className="text-sm sm:text-lg font-bold">App Store</div>
                 </div>
               </Button>
@@ -420,7 +448,7 @@ const Landing = () => {
                   <path fill="#4285F4" d="M1.39 41.86c-1.39,4.18 -1.39,9.77 -1.39,15.34l0 397.64c0,5.57 0,9.76 1.4,15.34l216.27 -214.86 -216.28 -213.46z"/>
                 </svg>
                 <div className="text-left">
-                  <div className="text-[8px] sm:text-[10px] uppercase font-bold tracking-tight opacity-70">Get it on</div>
+                  <div className="text-[8px] sm:text-[10px] uppercase font-bold tracking-tight opacity-70">Disponível no</div>
                   <div className="text-sm sm:text-lg font-bold">Google Play</div>
                 </div>
               </Button>
